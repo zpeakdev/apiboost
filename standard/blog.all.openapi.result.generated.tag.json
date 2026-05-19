@@ -1,17 +1,17 @@
 [
   {
-    "name": "article", 
+    "name": "article",
     "description": "",
-    "controllerName": "reqArticle", 
+    "controllerName": "reqArticle",
     "services": [
       {
         "path": "/article/list",
         "method": "get",
         "summary": "获取全部文章列表",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetArticleList", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetArticleList",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -224,9 +224,9 @@
         "method": "get",
         "summary": "获取个人文章列表 ",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetArticleListSelf", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetArticleListSelf",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -439,9 +439,9 @@
         "method": "get",
         "summary": "获取某个文章",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetArticle", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetArticle",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -466,8 +466,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -475,9 +474,9 @@
         "method": "post",
         "summary": "新增文章",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostArticle", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostArticle",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -535,7 +534,7 @@
                 "type": "array",
                 "required": true,
                 "description": "文章标签 [1,2]",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               },
               {
                 "name": "cate_id",
@@ -548,8 +547,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -557,9 +555,9 @@
         "method": "put",
         "summary": "修改文章",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPutArticle", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPutArticle",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -623,7 +621,7 @@
                 "type": "array",
                 "required": true,
                 "description": "文章标签",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               },
               {
                 "name": "cate_id",
@@ -642,8 +640,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -651,9 +648,9 @@
         "method": "delete",
         "summary": "删除文章",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteArticle", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteArticle",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -675,15 +672,14 @@
                 "type": "array",
                 "required": true,
                 "description": "文章id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -691,9 +687,9 @@
         "method": "patch",
         "summary": "文章审核",
         "description": "根据角色拦截权限",
-        "tag": "article", 
-        "controllerName": "reqPatchArticleReview", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPatchArticleReview",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -732,8 +728,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -741,9 +736,9 @@
         "method": "patch",
         "summary": "文章 点赞和取消",
         "description": "点赞后再次调用就是取消点赞",
-        "tag": "article", 
-        "controllerName": "reqPatchArticleLike", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPatchArticleLike",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -768,8 +763,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -777,9 +771,9 @@
         "method": "get",
         "summary": "获取文章评论",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetArticleComment", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetArticleComment",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -804,8 +798,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -813,9 +806,9 @@
         "method": "get",
         "summary": "获取文章评论分页",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetArticleCommentPage", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetArticleCommentPage",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -855,8 +848,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -864,9 +856,9 @@
         "method": "post",
         "summary": "新增文章评论",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostArticleComment", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostArticleComment",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -918,8 +910,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -927,9 +918,9 @@
         "method": "delete",
         "summary": "删除文章评论",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteArticleComment", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteArticleComment",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -954,8 +945,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -963,9 +953,9 @@
         "method": "patch",
         "summary": "文章评论 点赞或取消",
         "description": "点赞后再次调用就是取消点赞",
-        "tag": "article", 
-        "controllerName": "reqPatchArticleCommentLike", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPatchArticleCommentLike",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -999,8 +989,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1008,9 +997,9 @@
         "method": "get",
         "summary": "获取标签",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetTags", 
-        "auth": false, 
+        "tag": "article",
+        "controllerName": "reqGetTags",
+        "auth": false,
         "contentType": "application/json",
         "request": {
           "header": [],
@@ -1020,8 +1009,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1029,9 +1017,9 @@
         "method": "post",
         "summary": "新增标签",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostTags", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostTags",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1059,8 +1047,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1068,9 +1055,9 @@
         "method": "put",
         "summary": "修改标签",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPutTags", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPutTags",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1104,8 +1091,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1113,9 +1099,9 @@
         "method": "delete",
         "summary": "删除标签",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteTags", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteTags",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1137,15 +1123,14 @@
                 "type": "array",
                 "required": true,
                 "description": "分类id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1153,9 +1138,9 @@
         "method": "get",
         "summary": "获取分类",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetCategory", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetCategory",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1173,8 +1158,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1182,9 +1166,9 @@
         "method": "post",
         "summary": "新增分类",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostCategory", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostCategory",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1212,8 +1196,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1221,9 +1204,9 @@
         "method": "put",
         "summary": "修改分类",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPutCategory", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPutCategory",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1257,8 +1240,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1266,9 +1248,9 @@
         "method": "delete",
         "summary": "删除分类",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteCategory", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteCategory",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1290,15 +1272,14 @@
                 "type": "array",
                 "required": true,
                 "description": "分类id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1306,9 +1287,9 @@
         "method": "get",
         "summary": "检查用户名是否使用",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetUserCheckUsername", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetUserCheckUsername",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1334,8 +1315,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1343,9 +1323,9 @@
         "method": "post",
         "summary": "用户注册",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUserRegister", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUserRegister",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1391,8 +1371,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1400,9 +1379,9 @@
         "method": "post",
         "summary": "用户登录",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUserLogin", 
-        "auth": false, 
+        "tag": "article",
+        "controllerName": "reqPostUserLogin",
+        "auth": false,
         "contentType": "application/json",
         "request": {
           "header": [],
@@ -1481,9 +1460,9 @@
         "method": "post",
         "summary": "刷新token",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostTokenRefreshToken", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostTokenRefreshToken",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1564,9 +1543,9 @@
         "method": "post",
         "summary": "用户登出",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUserLogout", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUserLogout",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1584,8 +1563,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1593,9 +1571,9 @@
         "method": "get",
         "summary": "获取用户信息",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetUser", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetUser",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1620,8 +1598,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1629,9 +1606,9 @@
         "method": "post",
         "summary": "后台创建用户",
         "description": "后台创建用户的默认密码(qwe123)",
-        "tag": "article", 
-        "controllerName": "reqPostUser", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUser",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1665,8 +1642,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1674,9 +1650,9 @@
         "method": "put",
         "summary": "修改用户信息",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPutUser", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPutUser",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1746,8 +1722,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1755,9 +1730,9 @@
         "method": "delete",
         "summary": "删除用户",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteUser", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteUser",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1779,15 +1754,14 @@
                 "type": "array",
                 "required": true,
                 "description": "用户id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1795,9 +1769,9 @@
         "method": "get",
         "summary": "获取用户列表",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetUserList", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetUserList",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1815,8 +1789,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1824,9 +1797,9 @@
         "method": "patch",
         "summary": "修改用户密码",
         "description": "新旧密码不能相同",
-        "tag": "article", 
-        "controllerName": "reqPatchUserPassword", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPatchUserPassword",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1866,8 +1839,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1875,9 +1847,9 @@
         "method": "post",
         "summary": "(mo)单个上传 ",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostMoUploadUpload", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostMoUploadUpload",
+        "auth": true,
         "contentType": "multipart/form-data",
         "request": {
           "header": [
@@ -1910,8 +1882,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1919,9 +1890,9 @@
         "method": "delete",
         "summary": "(mo)删除文件",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqDeleteMoUploadFiles", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqDeleteMoUploadFiles",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -1943,15 +1914,14 @@
                 "type": "array",
                 "required": true,
                 "description": "文章id集合",
-                "items": [{"type": "string"}]
+                "items": [{ "type": "string" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -1959,9 +1929,9 @@
         "method": "get",
         "summary": "(mo)查询文件",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetMoUploadFiles", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetMoUploadFiles",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2001,8 +1971,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2010,9 +1979,9 @@
         "method": "get",
         "summary": "(mo)下载文件",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqGetMoUploadFilesDownload", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqGetMoUploadFilesDownload",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2037,8 +2006,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2046,9 +2014,9 @@
         "method": "post",
         "summary": "单个上传",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUploadFile", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUploadFile",
+        "auth": true,
         "contentType": "multipart/form-data",
         "request": {
           "header": [
@@ -2081,8 +2049,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2090,9 +2057,9 @@
         "method": "post",
         "summary": "批量上传",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUploadFiles", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUploadFiles",
+        "auth": true,
         "contentType": "multipart/form-data",
         "request": {
           "header": [
@@ -2124,8 +2091,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2133,9 +2099,9 @@
         "method": "post",
         "summary": "验证是否已经上传",
         "description": "",
-        "tag": "article", 
-        "controllerName": "reqPostUploadVerify", 
-        "auth": true, 
+        "tag": "article",
+        "controllerName": "reqPostUploadVerify",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2163,25 +2129,24 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       }
     ]
   },
   {
-    "name": "blogroll", 
+    "name": "blogroll",
     "description": "",
-    "controllerName": "reqBlogroll", 
+    "controllerName": "reqBlogroll",
     "services": [
       {
         "path": "/blogroll",
         "method": "get",
         "summary": "获取友链",
         "description": "",
-        "tag": "blogroll", 
-        "controllerName": "reqGetBlogroll", 
-        "auth": true, 
+        "tag": "blogroll",
+        "controllerName": "reqGetBlogroll",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2214,8 +2179,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2223,9 +2187,9 @@
         "method": "post",
         "summary": "新增友链",
         "description": "",
-        "tag": "blogroll", 
-        "controllerName": "reqPostBlogroll", 
-        "auth": true, 
+        "tag": "blogroll",
+        "controllerName": "reqPostBlogroll",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2277,8 +2241,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2286,9 +2249,9 @@
         "method": "put",
         "summary": "修改友链",
         "description": "",
-        "tag": "blogroll", 
-        "controllerName": "reqPutBlogroll", 
-        "auth": true, 
+        "tag": "blogroll",
+        "controllerName": "reqPutBlogroll",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2346,8 +2309,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2355,9 +2317,9 @@
         "method": "delete",
         "summary": "删除友链",
         "description": "",
-        "tag": "blogroll", 
-        "controllerName": "reqDeleteBlogroll", 
-        "auth": true, 
+        "tag": "blogroll",
+        "controllerName": "reqDeleteBlogroll",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2379,32 +2341,31 @@
                 "type": "array",
                 "required": true,
                 "description": "友链id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       }
     ]
   },
   {
-    "name": "role", 
+    "name": "role",
     "description": "",
-    "controllerName": "reqRole", 
+    "controllerName": "reqRole",
     "services": [
       {
         "path": "/role",
         "method": "get",
         "summary": "获取角色列表",
         "description": "",
-        "tag": "role", 
-        "controllerName": "reqGetRole", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqGetRole",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2523,9 +2484,9 @@
         "method": "post",
         "summary": "创建角色",
         "description": "后台创建用户的默认密码(qwe123)",
-        "tag": "role", 
-        "controllerName": "reqPostRole", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqPostRole",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2571,8 +2532,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2580,9 +2540,9 @@
         "method": "put",
         "summary": "修改角色",
         "description": "后台创建用户的默认密码(qwe123)",
-        "tag": "role", 
-        "controllerName": "reqPutRole", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqPutRole",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2634,8 +2594,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2643,9 +2602,9 @@
         "method": "delete",
         "summary": "删除角色",
         "description": "后台创建用户的默认密码(qwe123)",
-        "tag": "role", 
-        "controllerName": "reqDeleteRole", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqDeleteRole",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2667,15 +2626,14 @@
                 "type": "array",
                 "required": true,
                 "description": "要删除的id集合",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -2683,9 +2641,9 @@
         "method": "get",
         "summary": "获取角色已选菜单",
         "description": "",
-        "tag": "role", 
-        "controllerName": "reqGetRoleSelectedMenu", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqGetRoleSelectedMenu",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2728,7 +2686,7 @@
               "type": "array",
               "required": true,
               "description": "",
-              "items": [{"type": "number"}]
+              "items": [{ "type": "number" }]
             }
           ]
         }
@@ -2738,9 +2696,9 @@
         "method": "patch",
         "summary": "修改角色状态",
         "description": "后台创建用户的默认密码(qwe123)",
-        "tag": "role", 
-        "controllerName": "reqPatchRoleStatus", 
-        "auth": true, 
+        "tag": "role",
+        "controllerName": "reqPatchRoleStatus",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -2774,25 +2732,24 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       }
     ]
   },
   {
-    "name": "menu", 
+    "name": "menu",
     "description": "",
-    "controllerName": "reqMenu", 
+    "controllerName": "reqMenu",
     "services": [
       {
         "path": "/menu/getRouters",
         "method": "get",
         "summary": "获取动态路由",
         "description": "",
-        "tag": "menu", 
-        "controllerName": "reqGetMenuGetRouters", 
-        "auth": true, 
+        "tag": "menu",
+        "controllerName": "reqGetMenuGetRouters",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -3055,9 +3012,9 @@
         "method": "get",
         "summary": "查询菜单管理列表",
         "description": "",
-        "tag": "menu", 
-        "controllerName": "reqGetMenuList", 
-        "auth": true, 
+        "tag": "menu",
+        "controllerName": "reqGetMenuList",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -3568,9 +3525,9 @@
         "method": "post",
         "summary": "添加或编辑菜单",
         "description": "",
-        "tag": "menu", 
-        "controllerName": "reqPostMenu", 
-        "auth": true, 
+        "tag": "menu",
+        "controllerName": "reqPostMenu",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -3696,8 +3653,7 @@
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       },
       {
@@ -3705,9 +3661,9 @@
         "method": "delete",
         "summary": "删除菜单 ",
         "description": "",
-        "tag": "menu", 
-        "controllerName": "reqDeleteMenu", 
-        "auth": true, 
+        "tag": "menu",
+        "controllerName": "reqDeleteMenu",
+        "auth": true,
         "contentType": "application/json",
         "request": {
           "header": [
@@ -3729,15 +3685,14 @@
                 "type": "array",
                 "required": true,
                 "description": "",
-                "items": [{"type": "number"}]
+                "items": [{ "type": "number" }]
               }
             ]
           }
         },
         "response": {
           "type": "object",
-          "items": [
-          ]
+          "items": []
         }
       }
     ]

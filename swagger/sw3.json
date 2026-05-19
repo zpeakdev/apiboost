@@ -31,12 +31,7 @@
   "paths": {
     "/generate": {
       "get": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "Generates and download code. GenerationRequest input provided as JSON available at URL specified in parameter codegenOptionsURL.",
         "operationId": "generateFromURL",
         "parameters": [
@@ -65,12 +60,7 @@
         "x-swagger-router-controller": "io.swagger.v3.generator.online.GeneratorController"
       },
       "post": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "Generates and download code. GenerationRequest input provided as request body.",
         "operationId": "generate",
         "requestBody": {
@@ -100,10 +90,7 @@
     },
     "/clients": {
       "get": {
-        "tags": [
-          "clients",
-          "documentation"
-        ],
+        "tags": ["clients", "documentation"],
         "summary": "Deprecated, use '/{type}/{version}' instead. List generator languages of type 'client' or 'documentation' for given codegen version (defaults to V3)",
         "operationId": "clientLanguages",
         "parameters": [
@@ -141,9 +128,7 @@
     },
     "/servers": {
       "get": {
-        "tags": [
-          "servers"
-        ],
+        "tags": ["servers"],
         "summary": "Deprecated, use '/{type}/{version}' instead. List generator languages of type 'server' for given codegen version (defaults to V3)",
         "operationId": "serverLanguages",
         "parameters": [
@@ -172,9 +157,7 @@
     },
     "/documentation": {
       "get": {
-        "tags": [
-          "documentation"
-        ],
+        "tags": ["documentation"],
         "summary": "Deprecated, use '/{type}/{version}' instead. List generator languages of type 'documentation' for given codegen version (defaults to V3)",
         "operationId": "documentationLanguages",
         "parameters": [
@@ -203,12 +186,7 @@
     },
     "/{type}/{version}": {
       "get": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "List generator languages of the given type and version",
         "operationId": "languages",
         "parameters": [
@@ -222,10 +200,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": [
-                "V2",
-                "V3"
-              ]
+              "enum": ["V2", "V3"]
             }
           }
         ],
@@ -249,12 +224,7 @@
     },
     "/types": {
       "get": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "List generator languages of version defined in 'version parameter (defaults to V3) and type included in 'types' parameter; all languages",
         "operationId": "languagesMulti",
         "parameters": [
@@ -285,12 +255,7 @@
     },
     "/options": {
       "get": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "Returns options for a given language and version (defaults to V3)",
         "operationId": "listOptions",
         "parameters": [
@@ -326,12 +291,7 @@
     },
     "/model": {
       "post": {
-        "tags": [
-          "clients",
-          "servers",
-          "documentation",
-          "config"
-        ],
+        "tags": ["clients", "servers", "documentation", "config"],
         "summary": "Generates the intermediate model (\"bundle\") and returns it as a JSON. body.",
         "operationId": "generateBundle",
         "requestBody": {
@@ -360,9 +320,7 @@
     },
     "/render": {
       "post": {
-        "tags": [
-          "documentation"
-        ],
+        "tags": ["documentation"],
         "summary": "render a template using the provided data",
         "operationId": "renderTemplate",
         "requestBody": {
@@ -386,9 +344,7 @@
   "components": {
     "schemas": {
       "GenerationRequest": {
-        "required": [
-          "lang"
-        ],
+        "required": ["lang"],
         "type": "object",
         "properties": {
           "lang": {
@@ -408,20 +364,12 @@
           "type": {
             "type": "string",
             "description": "type of the spec",
-            "enum": [
-              "CLIENT",
-              "SERVER",
-              "DOCUMENTATION",
-              "CONFIG"
-            ]
+            "enum": ["CLIENT", "SERVER", "DOCUMENTATION", "CONFIG"]
           },
           "codegenVersion": {
             "type": "string",
             "description": "codegen version to use",
-            "enum": [
-              "V2",
-              "V3"
-            ]
+            "enum": ["V2", "V3"]
           },
           "options": {
             "$ref": "#/components/schemas/Options"
@@ -444,10 +392,7 @@
           "type": {
             "type": "string",
             "description": "Authorization type",
-            "enum": [
-              "query",
-              "header"
-            ]
+            "enum": ["query", "header"]
           }
         },
         "description": "adds authorization headers when fetching the open api definitions remotely. Pass in an authorizationValue object",
@@ -631,10 +576,7 @@
         }
       },
       "RenderRequest": {
-        "required": [
-          "context",
-          "template"
-        ],
+        "required": ["context", "template"],
         "type": "object",
         "properties": {
           "template": {
@@ -653,9 +595,7 @@
         "x-swagger-router-model": "io.swagger.codegen.v3.service.RenderRequest"
       },
       "RenderResponse": {
-        "required": [
-          "value"
-        ],
+        "required": ["value"],
         "type": "object",
         "properties": {
           "value": {
@@ -672,10 +612,7 @@
         "description": "generator version used by codegen engine",
         "schema": {
           "type": "string",
-          "enum": [
-            "V2",
-            "V3"
-          ]
+          "enum": ["V2", "V3"]
         }
       },
       "type": {
@@ -685,12 +622,7 @@
         "required": true,
         "schema": {
           "type": "string",
-          "enum": [
-            "client",
-            "server",
-            "documentation",
-            "config"
-          ]
+          "enum": ["client", "server", "documentation", "config"]
         }
       },
       "types": {
@@ -704,12 +636,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "client",
-              "server",
-              "documentation",
-              "config"
-            ]
+            "enum": ["client", "server", "documentation", "config"]
           }
         }
       }

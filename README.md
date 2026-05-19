@@ -16,6 +16,7 @@
 - ⚙️ **高度可配置**：支持自定义请求封装、URL 前缀、文件命名等
 - 🔧 **CLI 支持**：提供命令行工具，方便集成到构建流程中
   - [ ] 扩展 `cli` 命令参数以支持更多配置选项
+
 ## 安装
 
 ```bash
@@ -40,20 +41,20 @@ import type { ApiboostConfig } from "apiboost";
 
 export const apiboost: ApiboostConfig[] = [
   {
-    "sourcePath": "swagger/swagger.json",  // OpenAPI/Swagger 文件路径
-    "outDir": "src/api",                   // 生成代码的输出目录
-    "exportStyle": "function",             // 导出风格: "object" | "function"
-    "outputExt": "ts",                     // 输出文件类型: "ts" | "js"
-    "baseUrlPrefix": "/api",               // URL 前缀
-    "filenameCase": "camel",               // 文件命名风格: "camel" | "kebab"
-    "includeJSDoc": true,                  // 是否生成 JSDoc 注释
-    "groupInclude": [],                    // 要生成的分组（空数组表示全部）
-    "requestImport": {
-      "enabled": true,                     // 是否启用请求导入
-      "importLine": "import request from '@/utils/request';", // 导入语句
-      "identifier": "request"              // 请求函数标识符
-    }
-  }
+    sourcePath: "swagger/swagger.json", // OpenAPI/Swagger 文件路径
+    outDir: "src/api", // 生成代码的输出目录
+    exportStyle: "function", // 导出风格: "object" | "function"
+    outputExt: "ts", // 输出文件类型: "ts" | "js"
+    baseUrlPrefix: "/api", // URL 前缀
+    filenameCase: "camel", // 文件命名风格: "camel" | "kebab"
+    includeJSDoc: true, // 是否生成 JSDoc 注释
+    groupInclude: [], // 要生成的分组（空数组表示全部）
+    requestImport: {
+      enabled: true, // 是否启用请求导入
+      importLine: "import request from '@/utils/request';", // 导入语句
+      identifier: "request", // 请求函数标识符
+    },
+  },
 ];
 ```
 
@@ -123,7 +124,7 @@ npx apiboost
  * 获取用户信息
  * @group user
  * @route /users/{id} [GET]
- * @param {number} pathParams.id 
+ * @param {number} pathParams.id
  */
 export function getUserById(pathParams: {
   /**  */
@@ -143,7 +144,7 @@ export function getUserById(pathParams: {
 使用生成的 API：
 
 ```ts
-import { getUserById } from './api/user';
+import { getUserById } from "./api/user";
 
 // 调用接口
 const userData = await getUserById({ id: 123 });

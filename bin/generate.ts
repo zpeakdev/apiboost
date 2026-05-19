@@ -2,11 +2,11 @@
 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import fse from 'fs-extra'
-import { processConfig } from "../src/generator/index.js"
-import { loadConfig } from "../src/utils/index.js"
-import { ApiboostConfigFileNames } from '../src/config.js';
-import 'tsx/esm'
+import fse from "fs-extra";
+import { processConfig } from "../src/generator/index.js";
+import { loadConfig } from "../src/utils/index.js";
+import { ApiboostConfigFileNames } from "../src/config.js";
+import "tsx/esm";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,7 +20,7 @@ interface CliOptions {
 
 /**
  * 解析命令行参数
- * @returns 
+ * @returns
  */
 function parseArgs(): CliOptions {
   const args = process.argv.slice(2);
@@ -29,11 +29,11 @@ function parseArgs(): CliOptions {
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
 
-    if (arg === '--config' || arg === '-c') {
+    if (arg === "--config" || arg === "-c") {
       options.configPath = args[++i]; // 参数值紧跟在选项后面
-    } else if (arg === '--help' || arg === '-h') {
+    } else if (arg === "--help" || arg === "-h") {
       options.help = true;
-    } else if (arg === '--version' || arg === '-v') {
+    } else if (arg === "--version" || arg === "-v") {
       options.version = true;
     }
   }
@@ -64,9 +64,9 @@ function showHelp(): void {
 function showVersion(): void {
   try {
     // 从package.json读取版本信息
-    const packageStr = fse.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')
+    const packageStr = fse.readFileSync(path.resolve(__dirname, "../package.json"), "utf8");
     const packageJson = JSON.parse(packageStr);
-    console.log(`apiboost v${packageJson.version || '1.0.0'}`);
+    console.log(`apiboost v${packageJson.version || "1.0.0"}`);
   } catch (error) {
     console.log(`版本读取失败: ${error}`);
   }
@@ -111,7 +111,6 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 }
-
 
 // 仅作为脚本使用：始终执行 main()
 main();

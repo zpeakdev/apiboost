@@ -1,9 +1,8 @@
-import fse from 'fs-extra'
+import fse from "fs-extra";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ApiboostConfig } from '../type.js'
-import { ApiboostConfigFileNames } from '../config.js';
-
+import { ApiboostConfig } from "../type.js";
+import { ApiboostConfigFileNames } from "../config.js";
 
 /**
  * 检查配置文件是否存在
@@ -11,20 +10,22 @@ import { ApiboostConfigFileNames } from '../config.js';
  * @param configFiles 配置文件
  * @returns 文件路径
  */
-export function checkApiboostConfigFile(rootPath = process.cwd(), configFiles = ApiboostConfigFileNames): string {
-  let fileName = ''
+export function checkApiboostConfigFile(
+  rootPath = process.cwd(),
+  configFiles = ApiboostConfigFileNames,
+): string {
+  let fileName = "";
 
   for (const name of configFiles) {
-    const filePath = path.join(rootPath, name)
+    const filePath = path.join(rootPath, name);
     if (fse.existsSync(filePath)) {
-      fileName = filePath
-      break
+      fileName = filePath;
+      break;
     }
   }
 
-  return fileName
+  return fileName;
 }
-
 
 /**
  * 加载生成器配置
@@ -32,8 +33,10 @@ export function checkApiboostConfigFile(rootPath = process.cwd(), configFiles = 
  * - 其次从项目根目录读取 apiboost.config
  * - 若都缺失，抛错提示
  */
-export async function loadConfig(customConfigPath?: string): Promise<ApiboostConfig | ApiboostConfig[]> {
-  let configFilePath: string = ''
+export async function loadConfig(
+  customConfigPath?: string,
+): Promise<ApiboostConfig | ApiboostConfig[]> {
+  let configFilePath: string = "";
   // 如果指定了自定义配置路径，直接返回
   if (customConfigPath) {
     const resolvedPath = path.resolve(process.cwd(), customConfigPath);
@@ -61,10 +64,10 @@ export async function loadConfig(customConfigPath?: string): Promise<ApiboostCon
      *    例如， d:\project\my_study_project\apiboost\apiboost.config.ts 会被转换为 file:///D:/project/my_study_project/apiboost/apiboost.config.ts 这样的 URL
      */
     const { apiboost } = await import(pathToFileURL(configFilePath).href);
-    console.log('✔️  使用配置文件:', configFilePath);
-    return apiboost
+    console.log("✔️  使用配置文件:", configFilePath);
+    return apiboost;
   } catch (error) {
-    console.error('❌ 加载配置文件失败:', error);
+    console.error("❌ 加载配置文件失败:", error);
     return [];
   }
 }

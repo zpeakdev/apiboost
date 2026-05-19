@@ -1,19 +1,18 @@
-import path from 'node:path';
-import fse from 'fs-extra'
-import { OpenAPIAdapter, StandardGroup } from "@zpeak/openapi-adapter"
+import path from "node:path";
+import fse from "fs-extra";
+import { OpenAPIAdapter, StandardGroup } from "@zpeak/openapi-adapter";
 import type { ApiboostConfig } from "../type.js";
-import { genFunctionCode, pascalCase, toFileName } from './utils.js';
-
+import { genFunctionCode, pascalCase, toFileName } from "./utils.js";
 
 /**
  * 生成对象聚合导出文件内容
  * @param group 分组数据
  * @param cfg 配置
  * @param header 头部内容
- * @returns 
- * 
+ * @returns
+ *
  * @example
- * 
+ *
  * ```ts
  * const reqObj = {
  *  reqGetArticle(params: { id: string }) {
@@ -30,14 +29,14 @@ import { genFunctionCode, pascalCase, toFileName } from './utils.js';
 export function genObjectFile(group: StandardGroup, cfg: ApiboostConfig, header: string): string {
   const objName = group.controllerName || `req${pascalCase(group.name)}`; // 对象名：优先使用 group.controllerName
   const lines: string[] = [];
-  if (header) lines.push(header); // 
+  if (header) lines.push(header); //
   lines.push(`export const ${objName} = {`);
   for (const s of group.services || []) {
     lines.push(genFunctionCode(group.name, s, cfg));
-    lines.push(','); // 每个方法后加逗号分隔
+    lines.push(","); // 每个方法后加逗号分隔
   }
-  lines.push('};\n');
-  return lines.join('\n');
+  lines.push("};\n");
+  return lines.join("\n");
 }
 
 /**
@@ -45,10 +44,10 @@ export function genObjectFile(group: StandardGroup, cfg: ApiboostConfig, header:
  * @param group 分组数据
  * @param cfg 配置
  * @param header 头部内容
- * @returns 
- * 
+ * @returns
+ *
  * @example
- * 
+ *
  * ```ts
  * export function reqGetArticle(params: { id: string }) {
  *   return request({
@@ -57,7 +56,7 @@ export function genObjectFile(group: StandardGroup, cfg: ApiboostConfig, header:
  *     params,
  *   });
  * }
- * 
+ *
  * // ...
  * ```
  */
@@ -67,9 +66,8 @@ export function genFunctionFile(group: StandardGroup, cfg: ApiboostConfig, heade
   for (const s of group.services || []) {
     lines.push(genFunctionCode(group.name, s, cfg));
   }
-  return lines.join('\n');
+  return lines.join("\n");
 }
-
 
 /**
  * 处理单个配置项
@@ -85,11 +83,15 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
     filenameCase: "camel",
     includeJSDoc: true,
     groupInclude: [],
-    ...config
-  }
+    ...config,
+  };
 
   const outDirAbs = path.resolve(process.cwd(), cfg.outDir!); // 输出目录绝对路径
-  const openapiAdapterOutputPath = path.join(outDirAbs, 'openapi-adapter', path.basename(cfg.sourcePath)) // OpenAPI源数据 标准化后的文件导出路径
+  const openapiAdapterOutputPath = path.join(
+    outDirAbs,
+    "openapi-adapter",
+    path.basename(cfg.sourcePath),
+  ); // OpenAPI源数据 标准化后的文件导出路径
   await fse.ensureDir(path.dirname(openapiAdapterOutputPath)); // 确保目录存在
 
   // OPTIMIZATION: 后续优化， adapter 也要有可配置入口
@@ -113,8 +115,7 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
   // 遍历分组进行文件生成
   for (const group of openapiAdapterData) {
     // 过滤：若配置了 groupInclude，仅生成命中的分组
-    if (cfg.groupInclude?.length && !cfg.groupInclude.includes(group.name))
-      continue;
+    if (cfg.groupInclude?.length && !cfg.groupInclude.includes(group.name)) continue;
     const baseFileName = toFileName(group.name, cfg.filenameCase!); // 生成文件名基础（命名风格）
     const fileName = `${baseFileName}.${cfg.outputExt}`; // 拼接后缀 ts/js
     // 根据导出风格生成完整文件内容

@@ -19,9 +19,7 @@
         "summary": "获取角色列表",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "role_name",
@@ -88,10 +86,7 @@
                             "type": "integer"
                           },
                           "create_by": {
-                            "type": [
-                              "string",
-                              "null"
-                            ]
+                            "type": ["string", "null"]
                           },
                           "create_time": {
                             "type": "string"
@@ -103,10 +98,7 @@
                             "type": "string"
                           },
                           "remark": {
-                            "type": [
-                              "string",
-                              "null"
-                            ]
+                            "type": ["string", "null"]
                           }
                         },
                         "required": [
@@ -124,11 +116,7 @@
                       }
                     }
                   },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
+                  "required": ["code", "msg", "data"]
                 },
                 "example": {
                   "code": 200,
@@ -183,9 +171,7 @@
         "summary": "创建角色",
         "deprecated": false,
         "description": "后台创建用户的默认密码(qwe123)",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "Authorization",
@@ -221,12 +207,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "role_name",
-                  "role_key",
-                  "role_sort",
-                  "remark"
-                ]
+                "required": ["role_name", "role_key", "role_sort", "remark"]
               },
               "example": {
                 "role_name": "仵梓睿",
@@ -261,9 +242,7 @@
         "summary": "修改角色",
         "deprecated": false,
         "description": "后台创建用户的默认密码(qwe123)",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "Authorization",
@@ -303,13 +282,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "role_id",
-                  "role_name",
-                  "role_key",
-                  "role_sort",
-                  "remark"
-                ]
+                "required": ["role_id", "role_name", "role_key", "role_sort", "remark"]
               }
             }
           }
@@ -334,9 +307,7 @@
         "summary": "删除角色",
         "deprecated": false,
         "description": "后台创建用户的默认密码(qwe123)",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "Authorization",
@@ -363,9 +334,7 @@
                     "description": "要删除的id集合"
                   }
                 },
-                "required": [
-                  "ids"
-                ]
+                "required": ["ids"]
               }
             }
           }
@@ -392,9 +361,7 @@
         "summary": "获取角色已选菜单",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "role_id",
@@ -438,41 +405,14 @@
                       }
                     }
                   },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
+                  "required": ["code", "msg", "data"]
                 },
                 "example": {
                   "code": 200,
                   "msg": "获取角色已选菜单成功",
                   "data": [
-                    10,
-                    20,
-                    2001,
-                    2002,
-                    2003,
-                    2004,
-                    2005,
-                    2006,
-                    2008,
-                    2009,
-                    2011,
-                    2012,
-                    2013,
-                    2014,
-                    2015,
-                    2016,
-                    2017,
-                    2018,
-                    2019,
-                    2020,
-                    2021,
-                    2023,
-                    2025,
-                    2026,
-                    2027
+                    10, 20, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2009, 2011, 2012, 2013, 2014,
+                    2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023, 2025, 2026, 2027
                   ]
                 }
               }
@@ -488,9 +428,7 @@
         "summary": "修改角色状态",
         "deprecated": false,
         "description": "后台创建用户的默认密码(qwe123)",
-        "tags": [
-          "role"
-        ],
+        "tags": ["role"],
         "parameters": [
           {
             "name": "Authorization",
@@ -518,10 +456,7 @@
                     "type": "integer"
                   }
                 },
-                "required": [
-                  "role_id",
-                  "status"
-                ]
+                "required": ["role_id", "status"]
               }
             }
           }
@@ -548,9 +483,7 @@
         "summary": "获取动态路由",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "menu"
-        ],
+        "tags": ["menu"],
         "parameters": [
           {
             "name": "Authorization",
@@ -595,10 +528,7 @@
                             "type": "string"
                           },
                           "component": {
-                            "type": [
-                              "string",
-                              "null"
-                            ]
+                            "type": ["string", "null"]
                           },
                           "meta": {
                             "type": "object",
@@ -610,10 +540,7 @@
                                 "type": "string"
                               },
                               "activeMenu": {
-                                "type": [
-                                  "string",
-                                  "null"
-                                ]
+                                "type": ["string", "null"]
                               },
                               "target": {
                                 "type": "string"
@@ -749,11 +676,7 @@
                       }
                     }
                   },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
+                  "required": ["code", "msg", "data"]
                 }
               }
             },
@@ -768,9 +691,7 @@
         "summary": "查询菜单管理列表",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "menu"
-        ],
+        "tags": ["menu"],
         "parameters": [
           {
             "name": "Authorization",
@@ -821,10 +742,7 @@
                             "type": "string"
                           },
                           "component": {
-                            "type": [
-                              "string",
-                              "null"
-                            ]
+                            "type": ["string", "null"]
                           },
                           "target": {
                             "type": "string"
@@ -833,10 +751,7 @@
                             "type": "string"
                           },
                           "active_menu": {
-                            "type": [
-                              "string",
-                              "null"
-                            ]
+                            "type": ["string", "null"]
                           },
                           "icon": {
                             "type": "string"
@@ -984,16 +899,10 @@
                                         "type": "string"
                                       },
                                       "path": {
-                                        "type": [
-                                          "string",
-                                          "null"
-                                        ]
+                                        "type": ["string", "null"]
                                       },
                                       "component": {
-                                        "type": [
-                                          "string",
-                                          "null"
-                                        ]
+                                        "type": ["string", "null"]
                                       },
                                       "target": {
                                         "type": "string"
@@ -1140,11 +1049,7 @@
                       }
                     }
                   },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
+                  "required": ["code", "msg", "data"]
                 },
                 "example": {
                   "code": 200,
@@ -1825,9 +1730,7 @@
         "summary": "添加或编辑菜单",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "menu"
-        ],
+        "tags": ["menu"],
         "parameters": [
           {
             "name": "Authorization",
@@ -1886,11 +1789,7 @@
                   "menu_type": {
                     "description": "菜单类型（M目录 C菜单 F按钮）",
                     "type": "string",
-                    "enum": [
-                      "M",
-                      "C",
-                      "F"
-                    ]
+                    "enum": ["M", "C", "F"]
                   },
                   "active_menu": {
                     "description": "需要高亮的菜单",
@@ -1943,12 +1842,7 @@
                   }
                 },
                 "type": "object",
-                "required": [
-                  "menu_name",
-                  "menu_type",
-                  "parent_id",
-                  "menu_id"
-                ]
+                "required": ["menu_name", "menu_type", "parent_id", "menu_id"]
               }
             }
           }
@@ -1973,9 +1867,7 @@
         "summary": "删除菜单 ",
         "deprecated": false,
         "description": "",
-        "tags": [
-          "menu"
-        ],
+        "tags": ["menu"],
         "parameters": [
           {
             "name": "Authorization",
@@ -2001,9 +1893,7 @@
                     }
                   }
                 },
-                "required": [
-                  "ids"
-                ]
+                "required": ["ids"]
               }
             }
           }

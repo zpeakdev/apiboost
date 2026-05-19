@@ -1,5 +1,4 @@
-import { OpenAPIAdapterConfig } from "@zpeak/openapi-adapter/"
-
+import { OpenAPIAdapterConfig } from "@zpeak/openapi-adapter/";
 
 /**
  * 文件头部的请求导入配置
@@ -13,14 +12,14 @@ export interface RequestImportCfg {
 
   /**
    * 完整的 import 文本
-   * 
+   *
    * @example `import request from '@/utils/request';`
    */
   importLine: string;
 
   /**
    * 请求调用函数的标识符，通常与 import 的默认导出一致（如 "request"）
-   * 
+   *
    * @default "request"
    */
   identifier?: string;
@@ -29,7 +28,7 @@ export interface RequestImportCfg {
 /**
  * 生成器总配置
  */
-export interface ApiboostConfig extends Omit<OpenAPIAdapterConfig, 'inputPath' | 'outputPath'> {
+export interface ApiboostConfig extends Omit<OpenAPIAdapterConfig, "inputPath" | "outputPath"> {
   /**
    * 源 JSON 路径, 支持本地文件路径或网络 URL
    */
@@ -37,49 +36,49 @@ export interface ApiboostConfig extends Omit<OpenAPIAdapterConfig, 'inputPath' |
 
   /**
    * 输出目录
-   * 
+   *
    * @default "outputs"
    */
   outDir?: string;
 
   /**
    * 导出风格 "object" 对象聚合导出 | "function" 逐函数导出
-   * 
+   *
    * @default "object"
    */
-  exportStyle?: 'object' | 'function';
+  exportStyle?: "object" | "function";
 
   /**
    * 生成文件后缀 "ts" | "js"
-   * 
+   *
    * @default "ts"
    */
-  outputExt?: 'js' | 'ts';
+  outputExt?: "js" | "ts";
 
   /**
    * URL 前缀（如 "/api"）
-   * 
+   *
    * @default ""
    */
   baseUrlPrefix?: string;
 
   /**
    * 文件命名风格 "camel" | "kebab"
-   * 
+   *
    * @default "camel"
    */
-  filenameCase?: 'camel' | 'kebab';
+  filenameCase?: "camel" | "kebab";
 
   /**
    * 是否输出 JSDoc 注释
-   * 
+   *
    * @default true
    */
   includeJSDoc?: boolean;
 
   /**
    * 只生成指定分组名（空数组表示全部）
-   * 
+   *
    * @default []
    */
   groupInclude?: string[];
