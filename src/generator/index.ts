@@ -99,7 +99,7 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
   const openapiAdapterData = await OpenAPIAdapter({
     inputPath: cfg.sourcePath,
     outputPath: openapiAdapterOutputPath,
-    groupBy: cfg.groupBy,
+    ...config.adapter,
   }).catch((err) => {
     console.error("❌ OpenAPIAdapter 错误:", err);
     throw err;

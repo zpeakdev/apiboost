@@ -18,6 +18,8 @@ export const apiboost: ApiboostConfig[] = [
       importLine: "import request from '@/utils/request';",
       identifier: "request",
     },
-    groupBy: "path",
+    adapter: {
+      groupBy: "path",
+    },
   },
 ];

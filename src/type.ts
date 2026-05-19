@@ -28,7 +28,7 @@ export interface RequestImportCfg {
 /**
  * 生成器总配置
  */
-export interface ApiboostConfig extends Omit<OpenAPIAdapterConfig, "inputPath" | "outputPath"> {
+export interface ApiboostConfig {
   /**
    * 源 JSON 路径, 支持本地文件路径或网络 URL
    */
@@ -87,4 +87,10 @@ export interface ApiboostConfig extends Omit<OpenAPIAdapterConfig, "inputPath" |
    * 请求导入配置
    */
   requestImport?: RequestImportCfg;
+
+  /**
+   * 适配器配置【 https://www.npmjs.com/package/@zpeak/openapi-adapter 】
+   * - 处理 openapi 源数据为约定的标准数据
+   */
+  adapter: Partial<OpenAPIAdapterConfig>;
 }
