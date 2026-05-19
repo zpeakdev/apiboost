@@ -84,6 +84,13 @@ export interface ApiboostConfig {
   groupInclude?: string[];
 
   /**
+   * 是否在写入生成文件前使用 Prettier 格式化
+   *
+   * @default true
+   */
+  format?: boolean;
+
+  /**
    * 请求导入配置
    */
   requestImport?: RequestImportCfg;

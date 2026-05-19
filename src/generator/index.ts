@@ -1,5 +1,6 @@
 import path from "node:path";
 import fse from "fs-extra";
+import prettier from "prettier";
 import type { StandardGroup } from "@zpeak/openapi-adapter";
 import { OpenAPIAdapter } from "@zpeak/openapi-adapter";
 import type { ApiboostConfig } from "../type.js";
@@ -84,6 +85,7 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
     filenameCase: "camel",
     includeJSDoc: true,
     groupInclude: [],
+    format: true,
     requestImport: {
       enabled: true,
       importLine: "import request from '@/utils/request';",
@@ -125,13 +127,22 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
     if (cfg.groupInclude?.length && !cfg.groupInclude.includes(group.name)) continue;
     const baseFileName = toFileName(group.name, cfg.filenameCase!); // 生成文件名基础（命名风格）
     const fileName = `${baseFileName}.${cfg.outputExt}`; // 拼接后缀 ts/js
+    const outputFilePath = path.join(outDirAbs, fileName);
+
     // 根据导出风格生成完整文件内容
     const content =
       cfg.exportStyle === "object"
         ? genObjectFile(group, cfg, header)
         : genFunctionFile(group, cfg, header);
+
+    const finalContent = cfg.format
+      ? await prettier.format(content, {
+          ...(await prettier.resolveConfig(outputFilePath)),
+          filepath: outputFilePath,
+        })
+      : content;
     // 写入目标文件
-    fse.writeFileSync(path.join(outDirAbs, fileName), content, "utf8");
-    console.log("✔️  生成完成:", path.join(outDirAbs, fileName)); // 控制台提示
+    fse.writeFileSync(outputFilePath, finalContent, "utf8");
+    console.log("✔️  生成完成:", outputFilePath); // 控制台提示
   }
 }
