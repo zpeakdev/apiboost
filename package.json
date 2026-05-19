@@ -62,18 +62,18 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^24.9.1",
+    "@types/node": "^25.9.0",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
     "prettier": "^3.8.3",
-    "typescript": "^5.6.3",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.4",
     "unbuild": "^3.6.1"
   },
   "dependencies": {
-    "@zpeak/openapi-adapter": "^1.0.12",
-    "fs-extra": "^11.3.3",
-    "tsx": "^4.21.0"
+    "@zpeak/openapi-adapter": "^1.0.14",
+    "fs-extra": "^11.3.5",
+    "tsx": "^4.22.3"
   }
 }

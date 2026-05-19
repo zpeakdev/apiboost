@@ -12,8 +12,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "types": ["node"],
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "allowSyntheticDefaultImports": true
   },
 
   "include": ["src", "bin"]
