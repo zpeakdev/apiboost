@@ -1,4 +1,4 @@
-import { OpenAPIAdapterConfig } from "@zpeak/openapi-adapter/";
+import type { OpenAPIAdapterConfig } from "@zpeak/openapi-adapter/";
 
 /**
  * 文件头部的请求导入配置

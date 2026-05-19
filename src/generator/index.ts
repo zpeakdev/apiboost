@@ -1,6 +1,7 @@
 import path from "node:path";
 import fse from "fs-extra";
-import { OpenAPIAdapter, StandardGroup } from "@zpeak/openapi-adapter";
+import type { StandardGroup } from "@zpeak/openapi-adapter";
+import { OpenAPIAdapter } from "@zpeak/openapi-adapter";
 import type { ApiboostConfig } from "../type.js";
 import { genFunctionCode, pascalCase, toFileName } from "./utils.js";
 

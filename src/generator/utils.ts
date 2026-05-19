@@ -1,5 +1,5 @@
-import { StandardBody, StandardField, StandardService } from "@zpeak/openapi-adapter";
-import { ApiboostConfig } from "../type.js";
+import type { StandardBody, StandardField, StandardService } from "@zpeak/openapi-adapter";
+import type { ApiboostConfig } from "../type.js";
 
 /**
  * 生成 JSDoc 的 `@param` 注释行列表
@@ -141,7 +141,7 @@ export function genResponseType(schema: StandardBody): string {
       const required = prop.required ? "" : "?"; // 非必填
 
       // 递归处理嵌套结构
-      let innerType = genResponseType({
+      const innerType = genResponseType({
         type: prop.type,
         items: prop.items,
       });

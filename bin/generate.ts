@@ -106,8 +106,8 @@ async function main(): Promise<void> {
     }
 
     console.log("✅ 全部生成完成。"); // 总结提示
-  } catch (e: any) {
-    console.error(e.message);
+  } catch (e: unknown) {
+    console.error(e instanceof Error ? e.message : e);
     process.exit(1);
   }
 }

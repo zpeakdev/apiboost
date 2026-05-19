@@ -1,7 +1,7 @@
 import fse from "fs-extra";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ApiboostConfig } from "../type.js";
+import type { ApiboostConfig } from "../type.js";
 import { ApiboostConfigFileNames } from "../config.js";
 
 /**
@@ -36,7 +36,7 @@ export function checkApiboostConfigFile(
 export async function loadConfig(
   customConfigPath?: string,
 ): Promise<ApiboostConfig | ApiboostConfig[]> {
-  let configFilePath: string = "";
+  let configFilePath: string;
   // 如果指定了自定义配置路径，直接返回
   if (customConfigPath) {
     const resolvedPath = path.resolve(process.cwd(), customConfigPath);
@@ -45,10 +45,10 @@ export async function loadConfig(
       throw new Error(`❌ 指定的配置文件不存在: ${resolvedPath}`);
     }
     configFilePath = resolvedPath;
+  } else {
+    // 在预定义的配置文件名中查找存在的文件
+    configFilePath = checkApiboostConfigFile();
   }
-
-  // 在预定义的配置文件名中查找存在的文件
-  configFilePath = checkApiboostConfigFile();
 
   // 如果没有找到配置文件，抛出错误
   if (!configFilePath) {
