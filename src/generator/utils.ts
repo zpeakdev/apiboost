@@ -312,7 +312,7 @@ export function genFunctionCode(
   }
 
   const sigArgs = args.join(", "); // 形参签名文本 : `params, pathParams, data`
-  const typeAnn = cfg.outputExt === "ts" ? `: Promise<${returnType}>` : ""; // 仅 TS 输出返回类型注解
+  const typeAnn = cfg.outputExt === "ts" ? `: ${cfg.returnPromiseAs}<${returnType}>` : ""; // 仅 TS 输出返回类型注解
   const funcName = service.controllerName;
 
   /**

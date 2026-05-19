@@ -18,6 +18,7 @@ export const apiboost: ApiboostConfig[] = [
       importLine: "import request from '@/utils/request';",
       identifier: "request",
     },
+    returnPromiseAs: "CustomPromise",
     adapter: {
       groupBy: "path",
     },

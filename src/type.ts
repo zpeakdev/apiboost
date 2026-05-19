@@ -89,6 +89,19 @@ export interface ApiboostConfig {
   requestImport?: RequestImportCfg;
 
   /**
+   * 自定义函数返回类型中 `Promise` 的类型名称
+   * - 用于外部自定义一个工具类型，解决响应的类型结构
+   *
+   * @example "AxiosPromise"
+   * ```ts
+   *   function getApi():AxiosPromise<XXX>{ ... }
+   * ```
+   *
+   * @default "Promise"
+   */
+  returnPromiseAs?: string;
+
+  /**
    * 适配器配置【 https://www.npmjs.com/package/@zpeak/openapi-adapter 】
    * - 处理 openapi 源数据为约定的标准数据
    */

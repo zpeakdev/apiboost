@@ -84,6 +84,12 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
     filenameCase: "camel",
     includeJSDoc: true,
     groupInclude: [],
+    requestImport: {
+      enabled: true,
+      importLine: "import request from '@/utils/request';",
+      identifier: "request",
+    },
+    returnPromiseAs: "AxiosPromise",
     ...config,
   };
 
