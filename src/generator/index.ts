@@ -91,7 +91,7 @@ export async function processConfig(config: ApiboostConfig): Promise<void> {
       importLine: "import request from '@/utils/request';",
       identifier: "request",
     },
-    returnPromiseAs: "AxiosPromise",
+    returnPromiseAs: "Promise",
     ...config,
   };
 
