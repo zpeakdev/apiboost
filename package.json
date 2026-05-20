@@ -54,9 +54,9 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate": "node dist/bin/generate.js",
-    "g": "pnpm build &&  node dist/bin/generate.js",
-    "release": "npx bumpp --excute=\"pnpm i && pnpm build\"",
+    "generate": "node dist/bin/generate.mjs",
+    "g": "pnpm build:un &&  node dist/bin/generate.mjs",
+    "release": "npx bumpp --excute=\"pnpm i && pnpm build:un\"",
     "pb": "pnpm publish"
   },
   "devDependencies": {
