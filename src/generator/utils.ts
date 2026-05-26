@@ -234,7 +234,7 @@ export function genFunctionCode(
   cfg: ApiboostConfig,
 ): string {
   const request = service.request; // 当前服务的请求定义
-  const { method, path: rawPath, summary, auth, description } = service;
+  const { method, originalPath, summary, auth, description } = service;
 
   // 三类参数位置：query/path/body
   const queryFields = request.query || [];
@@ -280,7 +280,7 @@ export function genFunctionCode(
    *  - 选择合适的对象名用于模板变量（优先 pathParams -> params -> data）
    */
   const argsNameForUrl = hasPath ? "pathParams" : hasQuery ? "params" : "data";
-  const urlExpr = buildUrl(cfg.baseUrlPrefix!, rawPath, pathFields, argsNameForUrl);
+  const urlExpr = buildUrl(cfg.baseUrlPrefix!, originalPath, pathFields, argsNameForUrl);
 
   /**
    * 3. 构建 **请求负载**（request 调用参数）：
@@ -304,7 +304,7 @@ export function genFunctionCode(
     jsDocLines.push(` * ${summary || ""}${auth ? "（需要认证）" : ""}`); // 接口摘要 + 认证提示
     description && jsDocLines.push(` * @description ${description}`);
     jsDocLines.push(` * @group ${groupName}`); // 分组名
-    jsDocLines.push(` * @route ${rawPath} [${method.toUpperCase()}]`); // 原始路由与方法
+    jsDocLines.push(` * @route ${originalPath} [${method.toUpperCase()}]`); // 原始路由与方法
     if (hasQuery) jsDocLines.push(...genJsDocParams(queryFields, "params"));
     if (hasPath) jsDocLines.push(...genJsDocParams(pathFields, "pathParams"));
     if (hasBody) jsDocLines.push(...genJsDocParams(bodyFields, "data"));
