@@ -56,7 +56,7 @@
     "format:check": "prettier --check .",
     "generate": "node dist/bin/generate.mjs",
     "g": "pnpm build:un &&  node dist/bin/generate.mjs",
-    "release": "npx bumpp --excute=\"pnpm i && pnpm build:un\"",
+    "release": "npx bumpp --no-push --execute=\"pnpm build:un\"",
     "pb": "pnpm publish"
   },
   "devDependencies": {
