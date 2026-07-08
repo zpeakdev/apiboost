@@ -257,7 +257,7 @@ export function genFunctionCode(
   // 判断是否存在各类参数
   const hasQuery = queryFields.length > 0;
   const hasPath = pathFields.length > 0;
-  const hasBody = bodyFields.length > 0;
+  const hasBody = request?.body?.type === "array" || bodyFields.length > 0;
 
   /**
    * 1. 构建 **函数形参** 列表：
