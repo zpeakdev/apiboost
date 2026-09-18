@@ -2,6 +2,8 @@
 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import tls from "node:tls";
+import { constants as cryptoConstants } from "node:crypto";
 import fse from "fs-extra";
 import { processConfig } from "../src/generator/index.js";
 import { loadConfig } from "../src/utils/index.js";
@@ -10,6 +12,31 @@ import "tsx/esm";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * 兼容旧网关 TLS：部分内网/测试环境网关（如 xxx 网关）未实现安全重协商（RFC 5746），
+ * Node 17+（OpenSSL 3.x）默认拒绝连接，fetch 会报 ERR_SSL_UNSAFE_LEGACY_RENEGOTIATION_DISABLED。
+ * 这里给全局 tls.connect 追加 SSL_OP_LEGACY_SERVER_CONNECT 放行，仅影响本 CLI 进程内的请求。
+ */
+function enableLegacyTlsRenegotiation(): void {
+  // Node 17 以下使用 OpenSSL 1.1.1，默认行为本身允许旧版重协商，无需处理
+  if (parseInt(process.versions.node.split(".")[0] ?? "0", 10) < 17) return;
+
+  const originalConnect = tls.connect;
+  const patchedConnect = (...args: unknown[]) => {
+    const options = args.find(
+      (arg): arg is Record<string, unknown> => typeof arg === "object" && arg !== null,
+    );
+    if (options) {
+      options.secureOptions =
+        ((options.secureOptions as number) ?? 0) | cryptoConstants.SSL_OP_LEGACY_SERVER_CONNECT;
+    }
+    return originalConnect.apply(tls, args as Parameters<typeof tls.connect>);
+  };
+  tls.connect = patchedConnect as typeof tls.connect;
+}
+
+enableLegacyTlsRenegotiation();
 
 // 命令行参数解析
 interface CliOptions {
