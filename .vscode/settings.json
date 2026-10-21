@@ -27,5 +27,5 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["apiboost", "bumpp", "excute", "zpeak"]
+  "cSpell.words": ["apiboost", "bumpp", "zpeak"]
 }
